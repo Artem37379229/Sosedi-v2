@@ -1,0 +1,247 @@
+@use '../../helpers/function' as *;
+
+.header {
+  height: 90px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.7);
+  background: linear-gradient(90deg, #4e3222 0%, #270e0a 51.92%, #4e3222 100%);
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 fluid-1024(25, 100);
+  }
+
+  &__logos {
+    display: flex;
+    align-items: center;
+    gap: fluid-1024(25, 30)
+  }
+
+  &__logo {
+    display: block;
+
+    &--jardin img {
+      width: fluid-1024(90, 98);
+      height: fluid-1024(50, 55);
+    }
+
+    &--greenfield img {
+      width: fluid-1024(136, 143);
+      height: fluid-1024(31, 33);
+    }
+  }
+
+  &__nav.active {
+    padding-top: 45px;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+    background: url("../../../public/header/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 90px;
+  }
+
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: fluid-1024(30, 60);
+  }
+
+  &__menu.active {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+
+  &__link {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
+  // ЛИЧНЫЙ КАБИНЕТ
+  &__account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    width: 248px;
+    height: 56px;
+
+    padding: 16px 24px;
+    border: 1px solid #d6b37c;
+    border-radius: 50px;
+
+    background: #0e0a09;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &-text {
+      color: #f2d3ac;
+    }
+
+    &.active {
+      display: flex;
+      position: absolute;
+      z-index: 12;
+      bottom: 20px;
+      width: 320px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__partners-icon {
+    display: flex;
+
+    &--sosedi {
+      width: fluid-360(80, 126);
+      height: fluid-360(16, 26);
+    }
+  }
+}
+
+.burger {
+  display: none;
+  width: 26px;
+  height: 16px;
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &__line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+
+    // 3 линии через псевдоэлементы
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    // верхняя
+    &::before {
+      top: -7px;
+    }
+
+    // нижняя
+    &::after {
+      top: 7px;
+    }
+  }
+
+  // СОСТОЯНИЕ ОТКРЫТО
+  &--active {
+    .burger__line {
+      background: transparent;
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1489px) {
+  .header {
+    &__nav {
+      display: none;
+    }
+
+    &__partners:last-child {
+      order: -1;
+    }
+
+    &__actions {
+      margin-left: 172px;
+      gap: 111px;
+    }
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+  }
+
+}
+
+@media screen and (max-width: 1023px) {
+  .header {
+    &__logos {
+      gap: fluid-360(10, 25);
+    }
+
+    &__actions {
+      gap: 30px;
+      margin-left: 27px;
+    }
+
+    &__body {
+      padding: 0 fluid-360(15, 25);
+    }
+  }
+}
+
+@media screen and (max-width: 764px) {
+  .header {
+    height: 60px;
+
+    &__account {
+      display: none;
+    }
+
+    &__nav.active {
+      top: 60px;
+    }
+
+    &__partners {
+      &-icon {
+        &--sosedi {
+          margin-right: 45px;
+        }
+      }
+    }
+  }
+}

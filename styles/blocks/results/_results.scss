@@ -1,0 +1,38 @@
+@use '../../helpers/function' as *;
+
+.results {
+  &__content {
+    text-align: center;
+    border-radius: 30px;
+    background: #bb8b1b;
+    padding: fluid-360(20, 34) 0;
+    display: flex;
+    justify-content: center;
+
+    max-width: fluid-1024(974, 1580);
+  }
+  margin-top: fluid-1024(30, 40);
+  margin-bottom: fluid-360(30, 50);
+
+  &__text {
+    line-height: 1.1;
+    text-decoration: underline;
+    font-size: fluid-1024(22, 28);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .results {
+    margin-top: fluid-360(20, 30);
+
+    &__text {
+      font-size: fluid-360(16, 22);
+    }
+
+    &__content {
+      padding-left: 30px;
+      padding-right: 30px;
+      max-width: fluid-360(330, 975);
+    }
+  }
+}

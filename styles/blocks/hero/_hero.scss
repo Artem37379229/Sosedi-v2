@@ -1,0 +1,246 @@
+@use '../../helpers/function' as *;
+
+.hero {
+  position: relative;
+  color: #fff;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 82px 0 fluid-1024(46, 101) 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  // ДАТА
+  &__date {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: fluid-360(10, 20);
+  }
+
+  &__title {
+    margin-bottom: 83px;
+  }
+
+  // ОСНОВНОЙ ЛЭЙАУТ
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+  }
+
+  // ПРОДУКТЫ
+  &__product {
+    &--left {
+      width: fluid-1024(334, 512);
+      height: fluid-1024(312, 482);
+    }
+
+    &--right {
+      width: fluid-1024(326, 503);
+      height: fluid-1024(305, 470);
+    }
+  }
+
+  &__image {
+    margin-top: 40px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    &--tablet {
+      display: none;
+    }
+  }
+
+  // ЦЕНТР
+  &__center {
+    width: fluid-1024(467, 624);
+    height: fluid-1024(453, 605);
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+  }
+
+  // СПЕЦ ПРИЗ
+  &__badge {
+    font-size: fluid-1024(22, 18);
+    text-transform: uppercase;
+    margin-right: fluid-1024(60, 110);
+    text-align: right;
+  }
+
+  // ПРИЗЫ
+  &__prizes {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__prize {
+    position: relative;
+
+    &--coffee {
+      width: fluid-1024(144, 193);
+      height: fluid-1024(248, 330);
+    }
+
+    &--phone {
+      width: fluid-1024(261, 349);
+      height: fluid-1024(264, 354);
+    }
+  }
+
+  // КРУЖОК x1
+  &__count {
+    position: absolute;
+
+    width: fluid-1024(44, 58);
+    height: fluid-1024(44, 58);
+
+    &--left {
+      top: -10px;
+      left: 0;
+    }
+
+    &--right {
+      top: fluid-360(20, 50);
+      right: fluid-360(10, 20);
+    }
+  }
+
+  // ГЛАВНЫЙ ПРИЗ
+  &__main-prize {
+    position: absolute;
+    z-index: 2;
+    left: fluid-1024(105, 140);
+    bottom: 100px;
+
+    width: fluid-1024(241, 323);
+    height: fluid-1024(145, 194);
+  }
+
+  &__main-amount {
+    font-size: 28px;
+    font-weight: 800;
+  }
+
+  &__main-text {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  // КНОПКА
+  &__button {
+    margin-top: fluid-1024(60, 94);
+    border-radius: 51px;
+    width: fluid-1024(274, 315);
+    height: fluid-360(46, 58);
+
+    font-size: fluid-360(13, 18);
+    font-weight: 600;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #f6dbb6 0%, #d8a069 100%);
+
+    span {
+      background: linear-gradient(180deg, #22120b 0%, #88482c 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &.active {
+      z-index: 11;
+      position: absolute;
+      bottom: 240px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .hero {
+    &__date {
+      font-size: fluid-360(15, 24);
+      margin-bottom: fluid-360(10, 20);
+    }
+
+    &__content {
+      gap: 85px;
+      flex-direction: column;
+    }
+
+    &__badge {
+      font-size: fluid-360(9, 18);
+      margin-right: fluid-360(34, 60);
+    }
+
+    &__container {
+      padding: fluid-360(50, 81) 0 76px 0;
+    }
+
+    &__product {
+      &--left {
+        display: flex;
+        justify-content: center;
+        width: fluid-360(191, 334);
+        height: fluid-360(179, 312);
+        margin-left: fluid-360(25, 60);
+      }
+
+      &--right {
+        display: none;
+      }
+    }
+
+    &__prize {
+      &--coffee {
+        width: fluid-360(73, 144);
+        height: fluid-360(125, 248);
+      }
+
+      &--phone {
+        width: fluid-360(132, 261);
+        height: fluid-360(134, 264);
+      }
+    }
+
+    &__main-prize {
+      width: fluid-360(122, 241);
+      height: fluid-360(73, 145);
+      left: fluid-360(50, 105);
+    }
+
+    &__center {
+      width: fluid-360(238, 467);
+      height: fluid-360(231, 453);
+    }
+
+    &__button {
+      width: 320px
+    }
+
+    &__title {
+      margin-bottom: 0;
+    }
+
+    &__count {
+      width: fluid-360(22, 44);
+      height: fluid-360(22, 44);
+    }
+
+    &__image {
+      &--tablet {
+        display: block;
+      }
+    }
+  }
+}

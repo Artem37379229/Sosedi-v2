@@ -1,0 +1,142 @@
+@use '../../helpers/function' as *;
+
+.how-to {
+  margin-top: fluid-1024(70, 110);
+
+  &__container {
+    display: grid;
+    place-items: center;
+  }
+
+  &__title {
+
+  }
+
+  &__steps {
+    margin-top: fluid-1024(30, 50);
+    display: flex;
+    justify-content: space-between;
+    gap: 55px;
+    position: relative;
+  }
+
+  &__button {
+    width: 320px;
+    border-radius: 50px;
+    align-items: center;
+    padding: 18px 40px;
+    margin-top: fluid-1024(50, 70);
+    text-align: center;
+    color: #f2d3ac !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: fluid-1024(13, 18);
+    background: #0e0a09;
+    border: 2px solid #d6b37c;
+  }
+}
+
+.step-item {
+  position: relative;
+  display: flex;
+  width: fluid-1024(278, 500);
+  height: fluid-1024(157, 238);
+
+  img {
+    object-fit: cover;
+  }
+
+  &--one::before {
+    height: 100%;
+    left: fluid-1024(41, 80);
+    width: fluid-1024(278, 421);
+    position: absolute;
+    content: "";
+    background-image: url("../../../public/how-to/number_1.png");
+  }
+
+  &--two::before {
+    height: 100%;
+    left: 6px;
+    width: fluid-1024(320, 485);
+    position: absolute;
+    content: "";
+    background-image: url("../../../public/how-to/number_2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &--three::before {
+    height: 100%;
+    left: fluid-1024(53, 80);
+    width: fluid-1024(320, 485);
+    position: absolute;
+    content: "";
+    background-image: url("../../../public/how-to/number_3.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__number {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__content {
+    position: relative;
+    margin-left: fluid-1024(32, 60);
+    padding-top: fluid-1024(12, 10);
+  }
+
+  &__icon-wrapper {
+
+
+    img {
+      width: fluid-1024(40, 80);
+      height: fluid-1024(40, 80);
+    }
+  }
+
+  &__caption {
+    margin-top: fluid-1024(8, 16);
+    font-size: fluid-1024(20, 28);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+
+  &__text {
+    font-size: fluid-1024(14, 18);
+    max-width: 264px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .how-to {
+    &__button {
+      height: fluid-360(46, 54);
+      margin-top: fluid-360(30, 50);
+    }
+  }
+
+  .step-item {
+    &__caption {
+      font-size: fluid-360(18, 20);
+    }
+  }
+}
+
+@media screen and (max-width: 951px) {
+  .how-to {
+    &__steps {
+      flex-direction: column;
+      gap: 31px;
+    }
+  }
+}

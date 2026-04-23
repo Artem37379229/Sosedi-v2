@@ -1,0 +1,143 @@
+@use '../../helpers/function' as *;
+
+.prizes {
+  display: grid;
+  place-items: center;
+  margin-top: fluid-1024(100, 152);
+
+  &__grid {
+    flex-wrap: wrap;
+    margin-top: fluid-1024(30, 55);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+}
+
+.prize-card {
+  padding-top: fluid-1024(50, 60);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 390px;
+  height: fluid-1024(423, 483);
+
+  background: linear-gradient(90deg, #341A12 0%, #4D3121 100%);
+  border-radius: 80px;
+  backdrop-filter: blur(15px);
+  box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.2);
+
+  &__name {
+    margin-bottom: auto;
+    font-size: fluid-1024(24, 28);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__count {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+
+    width: fluid-1024(44, 58);
+    height:  fluid-1024(44, 58);
+  }
+
+  &__image {
+    position: relative;
+    margin-bottom: auto;
+
+    &--coffee {
+      width: fluid-1024(130, 155);
+      height: fluid-1024(222, 265);
+    }
+
+    &--smeg {
+      width: fluid-1024(197, 234);
+      height: fluid-1024(209, 250);
+    }
+
+    &--money {
+      width: fluid-1024(246 ,266);
+      height: fluid-1024(148, 164);
+    }
+
+    &--phone {
+      width: fluid-1024(211 ,252);
+      height: fluid-1024(214, 255);
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .prize-card {
+    width: fluid-360(330, 420);
+  }
+
+  .prizes__grid {
+    gap: 25px 35px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .prizes {
+    margin-top: fluid-360(60, 100);
+
+    &__grid {
+      margin-top: fluid-360(25, 30);
+    }
+  }
+
+  .prize-card {
+    padding-top: fluid-360(30, 50);
+    height: fluid-360(313, 423);
+
+    &__count {
+      width: fluid-360(36, 44);
+      height: fluid-360(36, 44);
+    }
+
+    &__name {
+      font-size: fluid-360(18, 24);
+    }
+
+    &__image {
+      &--coffee {
+        width: fluid-360(109, 130);
+        height: fluid-360(187, 222);
+      }
+
+      &--smeg {
+        width: fluid-360(165, 197);
+        height: fluid-360(176, 209);
+      }
+
+      &--money {
+        width: fluid-360(207, 246);
+        height: fluid-360(124, 148);
+      }
+
+      &--phone {
+        width: fluid-360(211, 178);
+        height: fluid-360(214, 180);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 814px) {
+  .prizes__grid {
+    gap: 15px;
+  }
+
+  .prize-card {
+    border-radius: 30px;
+  }
+}

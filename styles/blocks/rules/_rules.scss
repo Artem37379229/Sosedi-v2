@@ -1,0 +1,238 @@
+@use '../../helpers/function' as *;
+
+.rules {
+  margin-top: fluid-1024(70, 110);
+
+  &__container {
+    place-items: center;
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__title {
+    margin-bottom: fluid-1024(30, 50);
+  }
+
+  &__content {
+    max-width: 1580px;
+    background: rgba(#21140F, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: fluid-1024(40, 75);
+
+    border-radius: 65px;
+    padding: fluid-1024(50, 58) 15px fluid-1024(50, 80) fluid-1024(50, 100);
+  }
+
+  &__steps {
+    max-width: fluid-1024(541, 815);
+  }
+
+  &__step {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &--three {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    &-number {
+      background: #0E0A09;
+      width: fluid-360(31, 51);
+      height: fluid-360(31, 51);
+      border-radius: 26px;
+      border: 1.50px solid #ffe6be;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #f2d3ac;
+      font-size: fluid-360(18, 30);
+
+      &--two {
+        align-self: flex-start;
+      }
+    }
+
+    &-text {
+      font-family: "Circe-Regular", sans-serif;
+      font-size: fluid-1024(16, 20);
+      line-height: 1.5;
+      color: #ddd;
+
+      &--code {
+        width: max-content;
+        color: #FFE6BE;
+        text-transform: uppercase;
+        font-size: fluid-360(20, 26);
+      }
+    }
+  }
+
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #f6dbb6 0%, #d8a069 100%);
+    padding: 17px 40px;
+    color: #22120b;
+    font-size: fluid-360(13, 18);
+    border-radius: 50px;
+
+    &--active {
+      width: max-content;
+      display: none;
+    }
+  }
+
+  &__products {
+    margin-top: 47px;
+    display: flex;
+    gap: 20px;
+  }
+
+  &__product {
+
+    //&--coffee {
+    //  width: fluid-1024(284, 287);
+    //  height: fluid-1024(265, 347);
+    //}
+    //
+    //&--tea {
+    //  width: fluid-1024(276, 361);
+    //  height: fluid-1024(258, 338);
+    //}
+  }
+
+  &__main-draw {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__main-draw-title, &__dates-title{
+    margin-bottom: fluid-360(14, 20);
+  }
+
+  &__footer {
+    display: flex;
+    gap: fluid-1024(50, 154);
+  }
+
+  &__dates,
+  &__main-draw {
+    text-align: center;
+  }
+
+  &__dates-title,
+  &__main-draw-title {
+    text-transform: uppercase;
+    color: #f4d8b2;
+    line-height: 1.4;
+    font-size: fluid-1024(20, 28);
+  }
+
+  &__dates-list {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  &__date {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Circe-Regular", sans-serif;
+    border-radius: 60px;
+    background: #0E0A09;
+    border: 1.50px solid #ffe6be;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    font-size: fluid-1024(16, 22);
+  }
+}
+
+@media screen and (max-width: 1356px) {
+  .rules {
+    &__button {
+      display: none;
+      &--active {
+        margin-left: 65px;
+        display: flex;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .rules {
+    &__content {
+      padding-left: fluid-360(15, 50);
+    }
+    &__product {
+      //&--coffee {
+      //  width: fluid-360(225, 284);
+      //  height: fluid-360(210, 265);
+      //}
+      //
+      //&--tea {
+      //  width: fluid-360(225, 276);
+      //  height: fluid-360(210, 258);
+      //}
+    }
+
+    &__step-text {
+      font-size: fluid-360(14, 16);
+    }
+
+    &__dates-title,
+    &__main-draw-title {
+      font-size: fluid-360(16, 20);
+    }
+
+    &__date {
+      font-size: fluid-360(14, 16);
+    }
+  }
+}
+
+@media screen and (max-width: 945px) {
+  .rules {
+    &__wrapper {
+      align-items: center;
+      flex-direction: column;
+    }
+
+
+    &__main-draw {
+      .rules__date {
+        width: 100%;
+      }
+    }
+
+    &__footer {
+      flex-direction: column;
+    }
+
+    &__button--active {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}

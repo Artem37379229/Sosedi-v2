@@ -1,0 +1,17 @@
+@use './reset';
+@use 'fonts/fonts';
+@use './variables';
+@use './globals';
+@use './utils';
+
+
+// blocks
+
+@use 'blocks/header/header';
+@use 'blocks/hero/hero';
+@use 'blocks/how-to/how-to';
+@use 'blocks/prizes/prizes';
+@use 'blocks/rules/rules';
+@use 'blocks/faq/faq';
+@use 'blocks/promo/promo';
+@use 'blocks/results/results';

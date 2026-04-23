@@ -1,0 +1,27 @@
+// 1. Для диапазона экрана от 1024px до 1920px
+@function fluid-1024($min, $max) {
+  $min-px: $min * 1px;
+  $max-px: $max * 1px;
+  $min-screen: 1024;
+  $max-screen: 1920;
+
+  @return clamp(
+          $min-px,
+          calc(#{$min-px} + (#{$max} - #{$min}) * ((100vw - #{$min-screen}px) / (#{$max-screen} - #{$min-screen}))),
+          $max-px
+  );
+}
+
+// 2. Для диапазона экрана от 360px до 1024px
+@function fluid-360($min, $max) {
+  $min-px: $min * 1px;
+  $max-px: $max * 1px;
+  $min-screen: 360;
+  $max-screen: 1024;
+
+  @return clamp(
+          $min-px,
+          calc(#{$min-px} + (#{$max} - #{$min}) * ((100vw - #{$min-screen}px) / (#{$max-screen} - #{$min-screen}))),
+          $max-px
+  );
+}
