@@ -33,6 +33,11 @@
     font-size: fluid-1024(13, 18);
     background: #0e0a09;
     border: 2px solid #d6b37c;
+    transition: background .3s ease-in-out;
+
+    &:hover {
+      background: #3b2b25;
+    }
   }
 }
 
@@ -132,11 +137,16 @@
   }
 }
 
-@media screen and (max-width: 951px) {
+@media screen and (max-width: 974px) {
   .how-to {
     &__steps {
+      padding-right: 40px;
       flex-direction: column;
       gap: 31px;
     }
+  }
+
+  .step-item__icon-wrapper {
+    display: none;
   }
 }

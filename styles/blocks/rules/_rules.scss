@@ -22,7 +22,7 @@
     flex-direction: column;
     gap: fluid-1024(40, 75);
 
-    border-radius: 65px;
+    border-radius: fluid-360(30, 65);
     padding: fluid-1024(50, 58) 15px fluid-1024(50, 80) fluid-1024(50, 100);
   }
 
@@ -184,6 +184,8 @@
   .rules {
     &__content {
       padding-left: fluid-360(15, 50);
+      padding-top: fluid-360(30, 50);
+      padding-bottom: fluid-360(30, 50);
     }
     &__product {
       //&--coffee {
