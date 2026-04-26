@@ -2,7 +2,8 @@
 
 
 .promo {
-  margin-top: fluid-360(60, 115);
+  background: radial-gradient(circle, #411B10 0%, #160201 100%);
+  padding-top: fluid-360(60, 115);
 
   &__container {
     display: flex;

@@ -3,7 +3,21 @@
 
 .faq {
   position: relative;
-  margin-top: fluid-1024(100, 150);
+  z-index: 1;
+  padding-top: fluid-1024(100, 150);
+  background: radial-gradient(circle, #411B10 0%, #160201 100%);
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: -50%;
+    right: 0;
+    width: fluid-1024(150, 250);
+    height: 100%;
+    z-index: -1;
+    background: url("../../../public/globals/Elipse2.png");
+    background-repeat: no-repeat;
+  }
 }
 
 .faq__content {
@@ -102,7 +116,7 @@ input[type="radio"] {
 
 @media screen and (max-width: 1023px) {
   .faq {
-    margin-top: fluid-360(60, 100);
+    padding-top: fluid-360(60, 100);
     &__card {
       &-title {
         font-size: fluid-360(14, 20);
@@ -113,5 +127,11 @@ input[type="radio"] {
         width: fluid-360(320, 975);
       }
     }
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .faq::before {
+    background: none;
   }
 }

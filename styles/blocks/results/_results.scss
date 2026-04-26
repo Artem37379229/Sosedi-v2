@@ -1,6 +1,25 @@
 @use '../../helpers/function' as *;
 
 .results {
+  position: relative;
+  z-index: 2;
+  background: radial-gradient(circle, #411B10 0%, #160201 100%);
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: fluid-1024(800, 1270);
+    z-index: -10;
+    background: url("../../../public/globals/bgr4.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+  }
+
+
   &__content {
     text-align: center;
     border-radius: 30px;
@@ -11,11 +30,11 @@
 
     max-width: fluid-1024(974, 1580);
   }
-  margin-top: fluid-1024(30, 40);
-  margin-bottom: fluid-360(30, 50);
+  padding-top: fluid-1024(30, 40);
+  padding-bottom: fluid-360(30, 50);
 
   &__text {
-    line-height: 1.1;
+    line-height: 1.4;
     text-decoration: underline;
     font-size: fluid-1024(22, 28);
   }
@@ -23,7 +42,11 @@
 
 @media screen and (max-width: 1023px) {
   .results {
-    margin-top: fluid-360(20, 30);
+    padding-top: fluid-360(20, 30);
+
+    &::before {
+      height: fluid-360(250, 800);
+    }
 
     &__text {
       font-size: fluid-360(16, 22);
